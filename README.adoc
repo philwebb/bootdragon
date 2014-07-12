@@ -1,0 +1,46 @@
+= Boot Dragon
+
+Boot Dragon if a friendly dragon that will write Spring Boot applications whenever
+someone sends it a twitter message. It's designed as a fun way to engage people at
+conferences.
+
+
+== What Does It Do?
+Boot Dragon listens for tweets then writes a small Spring Boot web application that
+containing the content of the tweet. The application is saved as a GitHub Gist and a
+reply is sent the user with a link to the Gist and a small preview animation. There is
+UI is designed to be displayed whilst all this is going on that shows the dragon
+furiously typing.
+
+
+== How do I try it?
+If you want to try the application locally you will need Twitter and GitHub API tokens.
+You can create them at http://dev.twitter.com and http://github.com. Copy the
+`src/main/resources/application-secret.properties.template` to
+`src/main/resources/application-secret.properties` and add keys in the appropriate place.
+
+
+== How is the screen cast created?
+It's a trick! The start of the animation is always the same, it was created by capturing
+a screencast then converting it to an animated GIF using `ffmpeg` and `gifsicle`:
+
+[indent=0]
+----
+	$ ffmpeg -i in.mov -s 800x600 -pix_fmt rgb24 -r 10 -f gif - | gifsicle --optimize=3 --delay=7 --careful > out.gif
+----
+
+The last frame is generated dynamically by overlaying the message text onto a picture
+of a web browser.
+
+
+== How does the UI work
+Take a look at `bootdragon.js` and `WebUserInterface.java`. The web page listens for
+STOMP messages over a websocket. The UI sends the messages as things are processed.
+
+
+== What technologies are used
+* Spring Boot
+* Spring MVC with WebSockets
+* Spring Social
+* Thymeleaf
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+	<title>BootDragon</title>
+	<script src="/webjars/jquery/2.1.1/jquery.js"/>
+	<script src="/webjars/stomp-websocket/2.3.1/stomp.js"/>
+	<script src="/webjars/sockjs-client/0.3.4/sockjs.js"/>
+	<script src="bootdragon.js"/>
+	<link rel="stylesheet" type="text/css" href="bootdragon.css"/>
+</head>
+<body>
+	<div class="content">
+		<div id="banner">
+			<h1 id="default-banner">
+				Tweet a message to <em th:text="${twitterScreenName}">@ScreenName</em>
+			</h1>
+			<h1 id="custom-banner" style="display: none;">Custom</h1>
+		</div>
+		<div id="dragon">
+			<img id="monitor" src="images/monitor.png" onclick="stopTyping()" />
+			<img id="keyboard" src="images/keyboard.png" onclick="startTyping()" />
+			<img id="back-arm" src="images/arm.png" />
+			<img id="body" src="images/body.png" />
+			<img id="body-blink" src="images/body-blink.png" />
+			<img id="front-arm" src="images/arm.png" class="arm" />
+		</div>
+		<div id="preview" style="display: none;">
+			<img id="preview-image" />
+		</div>
+	</div>
+</body>
+</html>

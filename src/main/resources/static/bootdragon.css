@@ -1,0 +1,126 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+div.content {
+	width: 100vw;
+	height: 56.25vw; /* 100/56.25 = 1.778 */
+	max-height: 100vh;
+	max-width: 177.78vh; /* 16/9 = 1.778 */
+	margin: auto;
+	position: absolute;
+	top: 0;
+	bottom: 0; /* vertical center */
+	left: 0;
+	right: 0; /* horizontal center */
+}
+
+#banner {
+	position: absolute;
+	top: 4%;
+	min-width: 90%;
+	font-family: sans-serif;
+	font-weight: normal;
+	padding: 0 5% 0 5%;
+}
+
+#preview img {
+	position: absolute;
+	top: 12%;
+	left: 12%;
+	min-width: 65%;
+	height: auto;
+}
+
+#dragon * {
+	position: absolute;
+}
+
+#monitor {
+	max-width: 14%;
+	top: 26%;
+	left: 22%;
+	height: auto;
+}
+
+#keyboard {
+	max-width: 16%;
+	top: 66%;
+	left: 35%;
+	height: auto;
+}
+
+#body {
+	max-width: 50%;
+	top: 13%;
+	left: 40%;
+	height: auto;
+}
+
+#body-blink {
+	max-width: 50%;
+	top: 13%;
+	left: 40%;
+	height: auto;
+}
+
+#back-arm {
+	max-width: 16%;
+	top: 55%;
+	left: 42%;
+	height: auto;
+}
+
+#back-arm.animate {
+	animation: back-typing 0.18s linear 0s infinite alternate;
+	-webkit-animation: back-typing 0.18s linear 0s infinite alternate;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+}
+
+#front-arm {
+	max-width: 16%;
+	top: 58%;
+	left: 44%;
+	height: auto;
+}
+
+#front-arm.animate {
+	animation: front-typing 0.16s linear 0s infinite alternate;
+	-webkit-animation: front-typing 0.16s linear 0s infinite alternate;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+}
+
+@keyframes back-typing {
+	0% { top: 55%; left: 42%;}
+	25% { top: 56%; left: 42%;}
+	50% { top: 55%; left: 40%;}
+	57% { top: 55%; left: 42%;}
+	100% { top: 56%; left: 40%; }
+}
+
+@keyframes front-typing {
+	0% { top: 58%; left: 44%;}
+	20% { top: 57%; left: 42%;}
+	50% { top: 57%; left: 44%;}
+	75% { top: 58%; left: 44%;}
+	100% { top: 58%; left: 44%;}
+}
+
+@-webkit-keyframes back-typing {
+	0% { top: 55%; left: 42%;}
+	25% { top: 56%; left: 42%;}
+	50% { top: 55%; left: 40%;}
+	57% { top: 55%; left: 42%;}
+	100% { top: 56%; left: 40%; }
+}
+
+@-webkit-keyframes front-typing {
+	0% { top: 58%; left: 44%;}
+	20% { top: 57%; left: 42%;}
+	50% { top: 57%; left: 44%;}
+	75% { top: 58%; left: 44%;}
+	100% { top: 58%; left: 44%;}
+}
