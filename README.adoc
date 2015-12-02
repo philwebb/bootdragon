@@ -44,3 +44,4 @@ STOMP messages over a websocket. The UI sends the messages as things are process
 * Spring Social
 * Thymeleaf
 
+Test
